@@ -1,6 +1,5 @@
-# pjt2020-1
-
-> A Vue.js project
+# First PJT 2020 with VUE & IONIC
+> Vue.js와 IONIC을 이용하여 바나프레소 반응형 웹, 모바일 페이지 만들기!! 
 
 ## Build Setup
 
