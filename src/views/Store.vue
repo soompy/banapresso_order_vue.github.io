@@ -1,114 +1,127 @@
 <template>
-  <div class="hello">
-    <h1></h1>
-    <h2>스토어</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
+  <div id="mapWrap" class="space">
+    <div id="map" style="width:100%;height:100%;"></div>
+    <div class="local_box">
+     
+      <div class="top">
+        <div class="inner">
+          <span class="search_box">
+            <input type="text" class="text_search_box" placeholder="매장명 또는 주소">
+            <button type="submit" class="btn_map_search">검색</button>
+          </span>
+          <ul class="all_store">
+            <li class="active"><a href="">모든지점</a></li>
+            <li><a href="">운영매장</a></li>
+            <li><a href="">오픈예정</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'store',
-
+  name: 'map',
+  data() {
+    return{
+      msg: '카카오 지도 적용'
+    }
+  },
+  mounted() {
+    var container = document.getElementById('map');
+    var mapOptions = {
+      center: new daum.maps.LatLng(37.498201, 127.027569),
+      level: 4 
+    };
+    var map = new daum.maps.Map(container, mapOptions);
+  }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
+
 <style lang="scss" scoped>
+$primary-color: #f66b91;
 // @import "~styles/variables.scss";
-  // @import "./styles/_variables.scss";
-
-
-h1, h2 {
-  font-weight: normal;
+// @import "./styles/_variables.scss";
+li{
+  list-style: none;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+a{
+  text-decoration: none;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
-  a {
-    color: #42b983;
+
+#mapWrap{
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  #map{
+    overflow-x: hidden;
+  }
+  .local_box{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    .inner{
+      padding: 15px;
+    }
+    .top{
+      background: $primary-color;
+      .search_box{
+        display: block;
+        position: relative;
+        height: 35px;
+        border-bottom: 1px solid #fff;
+        .text_search_box{
+          width: 80%;
+          padding: 8px;
+          font-size: 16px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          background: none;
+          border: none;        
+          color: #fff;     
+          font-weight: bold;              
+          &::placeholder{
+            color: #fff;
+          }       
+        }
+        .btn_map_search{
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: 100%;
+          background: url('../assets/images/service/coffee.png') center center no-repeat;
+          background-size: 25px;
+          text-indent: -9999px;
+          border: none;
+          color: pointer;
+        }          
+      }            
+    }
+    .all_store{
+      display: flex;
+      padding: 0;
+      li{
+         margin: 0 10px;
+         a{
+           color: #eee;
+        }
+        &.active{
+          a{
+            font-weight: bold;
+            color: #fff;
+          }
+        }
+      }
+    }
   }
 }
+
 
 </style>

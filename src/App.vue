@@ -4,18 +4,17 @@
       <h1><router-link to="/"><img src="./assets/logo.png"></router-link></h1>
       <div class="link">
          <router-link to="/">Home</router-link>
-         <router-link to="/Menu">Menu</router-link>
          <router-link to="/Store">Store</router-link>
+         <router-link to="/Service">Service</router-link>         
       </div>      
-    </div>
-    
+    </div>    
     <router-view/>
 
     <footer id="footer">
       <div class="footer_box">
         <div class="policy">
-          <select name="policy" id="banaPolicy">
-            <option value="">개인정보처리방침</option>
+          <select name="policy" id="banaPolicy" class="select_policy">
+            <option selected value="">개인정보처리방침</option>
             <option value="">기업사이트 개인정보 처리방침</option>
             <option value="">바나프레소 개인정보 처리방침</option>
           </select>
@@ -44,6 +43,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$primary-color: #f66b91;
+
+a{
+  color: #333;
+  text-decoration: none;
+  transition: 0.5s;
+  &:hover{
+    color: $primary-color;
+  }
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -81,6 +90,18 @@ export default {
     padding: 1vw 0;
     width: 1200px;
     margin: auto;
+    .select_policy{
+      width: 220px;
+      -webkit-appearance: none; 
+      -moz-appearance: none; 
+      appearance: none; 
+      background: url("./assets/images/arrdown.png") no-repeat 95% 50%;
+      background-size: 12px;
+      border: 2px solid $primary-color;
+      padding: 5px 8px;
+      margin-right: 5px;
+      &::-ms-expand { display: none; }     
+    }
   }
   display: flex;
 }
