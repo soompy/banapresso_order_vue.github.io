@@ -44,7 +44,7 @@ export default {
 
 <style lang="scss" scoped>
 $primary-color: #f66b91;
-
+body{margin: 0;}
 a{
   color: #333;
   text-decoration: none;

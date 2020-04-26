@@ -95,10 +95,12 @@ import VueSlickCarousel from 'vue-slick-carousel'
 
 <style lang="scss" scoped>
 @import "../assets/scss/main.scss";
+$primary-color: #f66b91;
+body{margin: 0;}
 #content{
   .visual{
      width: 100%; 
-     background: #f66b91;     
+     background: $primary-color;     
      iframe{
         width: 1200px;
         height: 720px;
@@ -120,12 +122,17 @@ import VueSlickCarousel from 'vue-slick-carousel'
       }
       .pink_btn{
         border-radius: 20px;
-        border: 2px solid #f66b91;
-        color: #f66b91;
+        border: 2px solid $primary-color;
+        color: $primary-color;
         font-weight: bold;
         background: #fff;
         padding: 10px;
         cursor: pointer;
+        transition: 0.5s ease-in-out;
+        &:hover{
+          background: $primary-color;
+          color: #fff;
+        }
       }
     }
     .menu_box{
@@ -142,7 +149,7 @@ import VueSlickCarousel from 'vue-slick-carousel'
             100%{transform:translateY(10px);}
           }
           +p{
-            color: #f66b91;
+            color: $primary-color;
             animation: twinkle 1s infinite;
             @keyframes twinkle {
               0%{opacity: 1;}
@@ -163,7 +170,8 @@ import VueSlickCarousel from 'vue-slick-carousel'
 @media screen and (max-width: 1200px) {
   #content{
     .area-common{
-      width: 100%;      
+      width: 100%;   
+      padding: 0 15px;   
     }
     .visual{    
         iframe{

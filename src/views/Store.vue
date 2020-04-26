@@ -2,7 +2,6 @@
   <div id="mapWrap" class="space">
     <div id="map" style="width:100%;height:100%;"></div>
     <div class="local_box">
-     
       <div class="top">
         <div class="inner">
           <span class="search_box">
@@ -16,7 +15,44 @@
           </ul>
         </div>
       </div>
-
+      <div class="content">
+        <ul id="storeList" class="store_1">
+          <li>
+            <span class="pic">
+              <img src="../assets/images/store_1.jpg" alt="매장이미지">
+            </span>
+            <span class="box">
+              <strong class="name">Central</strong>
+              <em class="place">강남역점</em>
+              <em class="addr">서울 강남구 역삼동</em>
+            </span>
+          </li>
+        </ul>
+        <ul id="storeList" class="store_2">
+          <li>
+            <span class="pic">
+              <img src="../assets/images/store_1.jpg" alt="매장이미지">
+            </span>
+            <span class="box">
+              <strong class="name">Central</strong>
+              <em class="place">강남역점</em>
+              <em class="addr">서울 강남구 역삼동</em>
+            </span>
+          </li>
+        </ul>
+        <ul id="storeList" class="store_3">
+          <li>
+            <span class="pic">
+              <img src="../assets/images/store_1.jpg" alt="매장이미지">
+            </span>
+            <span class="box">
+              <strong class="name">Central</strong>
+              <em class="place">강남역점</em>
+              <em class="addr">서울 강남구 역삼동</em>
+            </span>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -44,8 +80,10 @@ export default {
 
 <style lang="scss" scoped>
 $primary-color: #f66b91;
-// @import "~styles/variables.scss";
-// @import "./styles/_variables.scss";
+ul{
+  margin: 0;
+  padding: 0;
+}
 li{
   list-style: none;
 }
@@ -66,6 +104,7 @@ a{
     left: 0;
     top: 0;
     z-index: 100;
+    background: #fff;
     .inner{
       padding: 15px;
     }
@@ -107,8 +146,9 @@ a{
     .all_store{
       display: flex;
       padding: 0;
+      margin-top: 15px;
       li{
-         margin: 0 10px;
+         margin: 0 15px;
          a{
            color: #eee;
         }
@@ -117,6 +157,34 @@ a{
             font-weight: bold;
             color: #fff;
           }
+        }
+      }
+    }
+
+    .content{
+      position: relative;
+      #storeList{
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #fff;
+        li{
+          display: flex;
+          padding: 15px;
+          .box{
+            display: flex;
+            flex-direction: column;
+            margin-left: 15px;
+            text-align: left;
+            justify-content: center;
+            .pic{display: block;}
+            .name{display: block;color: $primary-color;font-size: 16px;}
+            .place{display: block;margin: 10px 0;font-size: 16px;font-style: normal;}
+            .addr{display: block;color: #999;font-style: normal;}
+          }
+          &:hover{
+            background: #fff3f6;
+          }          
         }
       }
     }
