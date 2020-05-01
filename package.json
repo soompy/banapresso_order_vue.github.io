@@ -14,6 +14,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@jeremyhamm/vue-slider": "^0.2.0",
     "style-loader": "^1.1.3",
     "vue": "^2.5.2",
     "vue-daum-map": "^1.0.15",

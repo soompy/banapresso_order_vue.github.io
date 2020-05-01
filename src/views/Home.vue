@@ -4,10 +4,8 @@
       <iframe src="https://www.youtube.com/embed/XD7qDDfVexA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="main_con1 area-common">
-      <p class="bana">바나프레소</p>
-      <h2>메뉴</h2>
-      <span>시즌마다 들어오는 새로운 메뉴들을 바나프레소에서 즐기세요.</span>
-      
+      <h2>MENU</h2>
+      <span class="bana">시즌마다 들어오는 새로운 메뉴들을 바나프레소에서 즐기세요.</span>
       <template>
         <div class="menu_box">
           <VueSlickCarousel v-bind="settings" :arrows="true" :dots="true">
@@ -36,9 +34,8 @@
       </template>   
     </div>
     <div class="main_con2 area-common">
-      <p class="bana">바나프레소</p>
-      <h2>바나프레소 주문</h2>
-      <span>바나프레소를 만나는 여러가지 방법</span>
+      <h2>ORDER</h2>
+      <span class="bana">바나프레소를 만나는 여러가지 방법</span>
       <div class="order">
         <div class="offline">
           <h3>1. 바나프레소 매장에서 주문하기</h3>
@@ -54,21 +51,9 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'home',
-  data () {
-    return {
-      
-    }
-  }
-}
-</script>
 <script>
 import VueSlickCarousel from 'vue-slick-carousel'
-  // optional style for arrows & dots
-  import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
   export default {
     name: 'MyComponent',
@@ -102,19 +87,28 @@ body{margin: 0;}
      width: 100%; 
      background: $primary-color;     
      iframe{
-        width: 1200px;
-        height: 720px;
+        width: inherit;
+        height: 60vh;
       }
   }
   .area-common{
     width: 1200px;
-    margin: 30px auto;
-    text-align: left;    
+    margin: 60px auto;
+    text-align: left;
+    h2{
+      color: $primary-color;
+      text-shadow: 2px 2px 0 #eee;
+    }
+    .bana{
+      display: block;
+      margin-bottom: 30px;
+    }    
     &.main_con2{
       .order{
         display: flex;
         div{
           flex: 1;
+          margin: 0 15px;
         }
         h3{
           font-size: 20px;
@@ -170,18 +164,17 @@ body{margin: 0;}
 @media screen and (max-width: 1200px) {
   #content{
     .area-common{
-      width: 100%;   
-      padding: 0 15px;   
+      width: 100%;    
     }
     .visual{    
         iframe{
-          width: 100%;
+          width: 100%;         
           margin: 10px 0;
         }
     }
   } 
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
   #content{    
     .area-common{      
       .menu_box{
@@ -189,6 +182,20 @@ body{margin: 0;}
           width: 28vw;
           height: 28vw;
         }
+      }
+      &.main_con2{
+        .order{
+          flex-direction: column;
+          word-break: keep-all;
+          > div{
+            margin: 15px 0;
+          }
+        }
+      }      
+    }
+    .visual{
+      iframe{
+         height: 30vh;
       }
     }
   } 
