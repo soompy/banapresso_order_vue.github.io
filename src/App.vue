@@ -146,7 +146,9 @@ a{
     .m_nav{
       position: relative;
       display: flex;
+      padding: 16px 8px;
       h1{
+        margin: 0;
         margin-left: auto;
         a{
           width: 70%;
