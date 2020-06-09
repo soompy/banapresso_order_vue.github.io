@@ -1,6 +1,6 @@
-# pjt2020-1
+## First PJT 2020 with VUE 
+> Vue.js를 이용하여 바나프레소 반응형 웹 페이지 만들기!! 
 
-> A Vue.js project
 
 ## Build Setup
 
