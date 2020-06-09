@@ -59,6 +59,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+body { margin: 0 !important; }
 $primary-color: #f66b91;
 a{
   color: #333;
@@ -146,13 +147,15 @@ a{
     .m_nav{
       position: relative;
       display: flex;
+      align-items: center;
       padding: 16px 8px;
       h1{
-        margin: 0;
-        margin-left: auto;
+        margin: auto;
         a{
-          width: 70%;
-          display: block; 
+          display: flex;
+          align-items: center;
+          width: 70%; 
+          margin: auto;
           img{
             width: 100%;
           }             

@@ -122,10 +122,12 @@ export default {
 
 <style lang="scss" scoped>
 $primary-color: #f1648a;
-body{margin: 0;}
+body{margin: 0 !important;max-width: 100% !important;height: 100%;}
 ul{padding: 0;}
 li{list-style: none;}
 #service{
+  overflow: hidden;
+  width: 100%;
   .area-common{
     width: 1000px;
     margin: 50px auto;
@@ -165,10 +167,10 @@ li{list-style: none;}
         margin: 20px 0;
       }
       .benefit{
-        display: flex;
+        display: flex;        
         justify-content: center;
         li{
-          flex: 1;
+          flex: 1 1 1 1;
           margin: 0 2vw;
           .benefit-box{
             display: block;
@@ -230,12 +232,14 @@ li{list-style: none;}
       &.main_con1{
         width: 100%;
         .greetings{
+          flex: 1 1 auto;
           h1{text-align: center;word-break: keep-all;}
         }
       }
       &.main_con2{
         .benefit{
           li{
+            flex: 1 1;
             .benefit-box{
               width: 100%;
               img{
@@ -254,13 +258,18 @@ li{list-style: none;}
       width: 100%;
       &.main_con1{
         width: 100%;
-        margin: 15px;
+        margin: 0;
         flex-direction: column;
+        .greetings{
+          width: 100%;
+          word-break: keep-all;
+        }
       }
       &.main_con2{
         .benefit{
           flex-direction: column;
           li{
+            flex: 1 1 auto;
             width: 60%;
             margin: 0 auto 1vw;
           }
@@ -281,5 +290,11 @@ li{list-style: none;}
       }
     }
   }
+  .app_mockup{
+    @keyframes slideRight {
+      0%{opacity: 0;}
+      100%{opacity: 1;transform:translateX(0px);}
+    }
+  }        
 }
 </style>

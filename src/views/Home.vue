@@ -40,12 +40,12 @@
         <div class="offline">
           <h3>1. 바나프레소 매장에서 주문하기</h3>
           <p>직접 매장을 방문하여 바나프레소의 최상의 서비스를 경험해보세요!</p>
-          <button class="pink_btn">가까운 매장 찾기 <img src="/assets/images/arr.png" alt=""></button>
+          <button class="pink_btn">가까운 매장 찾기</button>
         </div>
         <div class="online">
           <h3>2. 바나프레소 어플로 주문하기</h3>
           <p>기다릴 필요없이 빠르게 주문하고 다양한 혜택을 즐기세요!</p>
-          <button class="pink_btn">바나프레소 어플 소개 <img src="/assets/images/arr.png" alt=""></button>
+          <button class="pink_btn">바나프레소 어플 소개</button>
         </div>
       </div>
     </div>
@@ -181,15 +181,26 @@ body{margin: 0;}
         img{
           width: 28vw;
           height: 28vw;
-        }
+        }        
+      }
+      .bana{
+        margin-bottom: 6px;
       }
       &.main_con2{
         .order{
-          flex-direction: column;
+          h3{
+            font-size: 14px;
+          }
           word-break: keep-all;
           > div{
             margin: 15px 0;
+            &:first-child{
+              margin-right: 10px;
+            }
           }
+        }
+        .pink_btn{
+          font-size: 12px;
         }
       }      
     }

@@ -103,6 +103,7 @@ a{
     position: absolute;
     left: 0;
     top: 0;
+    width: 304px;
     z-index: 100;
     background: #fff;
     .inner{
@@ -180,7 +181,7 @@ a{
             .pic{display: block;}
             .name{display: block;color: $primary-color;font-size: 16px;}
             .place{display: block;margin: 10px 0;font-size: 16px;font-style: normal;}
-            .addr{display: block;color: #999;font-style: normal;}
+            .addr{display: inline-block;color: #999;font-style: normal;word-break: keep-all;}
           }
           &:hover{
             background: #fff3f6;
